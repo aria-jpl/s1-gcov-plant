@@ -1,0 +1,11 @@
+20191008, zx128
+
+(*) installer for miniconda
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+(*) installer for PLAnT
+
+./plant.install.sh
+
+It depends on existence of ~/tool/miniconda3
