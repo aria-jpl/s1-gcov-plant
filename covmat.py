@@ -1,8 +1,37 @@
 #!/home/ops/tool/miniconda3/envs/plant/bin/python
 
+#--------
+# set up input and output dir
+
+import sys
+
+#if len(sys.argv) != 3:
+#    print("Usage: %s inputDirPath outputDirPath" % sys.argv[0] , file=sys.stderr)
+#    sys.exit(-1)
+
+from util import get_input_dir_path, get_output_dir_path
+
+workDirPath = "/home/ops"
+
+#inputDirPath = '/var/data/coregistered_slcs-20190506161610-20190530161638/merged/'
+inputDirPath = get_input_dir_path(workDirPath)
+#output_dir = '~/hysds/work/output/'
+outputDirPath = get_output_dir_path(workDirPath)
+
+if None in [inputDirPath, outputDirPath]:
+    print("Either inputDirPath or outputDirPath is None")
+    sys.exit(-1)
+
+print("input dir: ", inputDirPath)
+print("output dir: ", outputDirPath)
+
+#--------
+# process
+
 import os
 import glob
 import plant
+
 
 #%matplotlib inline
 
@@ -20,7 +49,7 @@ nlooks = [3, 9]  # [azimuth, range]
 
 # input
 #input_dir = '~/hysds/work/data/coregistered_slcs-20190506161610-20190530161638/merged/'
-input_dir = '/var/data/coregistered_slcs-20190506161610-20190530161638/merged/'
+input_dir = inputDirPath
 
 slc_file = os.path.join(input_dir, 'SLC/20190506/20190506.slc.full')
 
@@ -39,7 +68,7 @@ lon_ml = os.path.join(input_dir, 'geom_master/lon.rdr')
 
 # output
 #output_dir = '~/hysds/work/output/'
-output_dir = '/var/data/output/'
+output_dir = outputDirPath
 beta_dir = os.path.join(output_dir, 'beta')
 beta_naught_dir = os.path.join(output_dir, 'beta_naught')
 gamma_naught_dir = os.path.join(output_dir, 'gamma_naught')

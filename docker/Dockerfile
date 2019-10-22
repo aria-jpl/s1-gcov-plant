@@ -8,25 +8,28 @@ RUN mkdir -p /home/ops/tool
 COPY ./barn/Miniconda3-latest-Linux-x86_64.sh /home/ops/tool
 COPY ./barn/plant.install.sh /home/ops/tool
 
-RUN ls ~/tool
+#RUN ls ~/tool
 
-# install miniconda
+# install miniconda and PLAnT
 # to rid of some warnings from install line below
-RUN mkdir -p ~/.conda
-# ref: https://docs.anaconda.com/anaconda/install/silent-mode/
-RUN sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3
-RUN rm ~/tool/Miniconda3-latest-Linux-x86_64.sh
+RUN mkdir -p ~/.conda && \
+    # ref: https://docs.anaconda.com/anaconda/install/silent-mode/
+    sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3 && \
+    rm ~/tool/Miniconda3-latest-Linux-x86_64.sh && \
+    # install PLAnT
+    sh ~/tool/plant.install.sh . && \
+    rm ~/tool/plant.install.sh
 
-# install PLAnT
-RUN sh ~/tool/plant.install.sh .
-RUN rm ~/tool/plant.install.sh
-
-RUN ls ~/tool
+#RUN ls ~/tool
 
 # the tool to generate gcov product
 RUN mkdir -p ~/verdi/ops/s1-gcov-plant
 COPY ./covmat.py /home/ops/verdi/ops/s1-gcov-plant
-COPY ./run.sh /home/ops/verdi/ops/s1-gcov-plant
+COPY ./util.py   /home/ops/verdi/ops/s1-gcov-plant
+COPY ./run.sh    /home/ops/verdi/ops/s1-gcov-plant
+
+# Change to work directory
+WORKDIR /home/ops
 
 # Run shell
 CMD ["/bin/bash", "--login"]

@@ -1,43 +1,31 @@
-Sending build context to Docker daemon 75.28 MB
-Step 1/17 : FROM hysds/pge-base:latest
+Sending build context to Docker daemon 75.29 MB
+Step 1/13 : FROM hysds/pge-base:latest
  ---> c24124b2b850
-Step 2/17 : LABEL maintainer "hysds"
- ---> Running in 1ef7df15024c
- ---> 80729961c318
-Removing intermediate container 1ef7df15024c
-Step 3/17 : USER ops
- ---> Running in 1dae986469fd
- ---> b3f0362c0cdc
-Removing intermediate container 1dae986469fd
-Step 4/17 : RUN mkdir -p /home/ops/tool
- ---> Running in 50203ae2853f
+Step 2/13 : LABEL maintainer "hysds"
+ ---> Running in a8222299d5e0
+ ---> b9b0521eef79
+Removing intermediate container a8222299d5e0
+Step 3/13 : USER ops
+ ---> Running in d845507eb73d
+ ---> e65fb936acdd
+Removing intermediate container d845507eb73d
+Step 4/13 : RUN mkdir -p /home/ops/tool
+ ---> Running in 6f31c712077c
 
-[91m[0m ---> 69c9e6e2fab2
-Removing intermediate container 50203ae2853f
-Step 5/17 : COPY ./barn/Miniconda3-latest-Linux-x86_64.sh /home/ops/tool
- ---> 0d8a8a45defe
-Removing intermediate container a2b06656903a
-Step 6/17 : COPY ./barn/plant.install.sh /home/ops/tool
- ---> 91eeadbd94a5
-Removing intermediate container dd89e09e0a44
-Step 7/17 : RUN ls ~/tool
- ---> Running in 07914440654d
-
-[91m[0mMiniconda3-latest-Linux-x86_64.sh
-plant.install.sh
- ---> a510bf58656b
-Removing intermediate container 07914440654d
-Step 8/17 : RUN mkdir -p ~/.conda
- ---> Running in 1431b4f55673
-
-[91m[0m ---> 970bf4dc059f
-Removing intermediate container 1431b4f55673
-Step 9/17 : RUN sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3
- ---> Running in 3a3992511106
+[91m[0m ---> 704e1856c98a
+Removing intermediate container 6f31c712077c
+Step 5/13 : COPY ./barn/Miniconda3-latest-Linux-x86_64.sh /home/ops/tool
+ ---> 508aa712c388
+Removing intermediate container 8c99acf9134b
+Step 6/13 : COPY ./barn/plant.install.sh /home/ops/tool
+ ---> 0676f49a3a56
+Removing intermediate container 5ddfa419ce7c
+Step 7/13 : RUN mkdir -p ~/.conda &&     sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3 &&     rm ~/tool/Miniconda3-latest-Linux-x86_64.sh &&     sh ~/tool/plant.install.sh . &&     rm ~/tool/plant.install.sh
+ ---> Running in 6d15facb1eeb
 
 [91m[0mPREFIX=/home/ops/tool/miniconda3
 Unpacking payload ...
-[91m  0%|          | 0/42 [00:00<?, ?it/s][0m[91mExtracting : _libgcc_mutex-0.1-main.conda:   0%|          | 0/42 [00:00<?, ?it/s][0m[91mExtracting : libffi-3.2.1-hd88cf55_4.conda:   2%|2         | 1/42 [00:00<00:03, 10.83it/s][0m[91mExtracting : pysocks-1.7.0-py37_0.conda:   5%|4         | 2/42 [00:00<00:02, 19.48it/s]   [0m[91mExtracting : pysocks-1.7.0-py37_0.conda:   7%|7         | 3/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : python-libarchive-c-2.8-py37_11.tar.bz2:   7%|7         | 3/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : pycosat-0.6.3-py37h14c3975_0.conda:  10%|9         | 4/42 [00:00<00:01, 29.19it/s]     [0m[91mExtracting : requests-2.22.0-py37_0.conda:  12%|#1        | 5/42 [00:00<00:01, 29.19it/s]      [0m[91mExtracting : yaml-0.1.7-had09818_2.conda:  14%|#4        | 6/42 [00:00<00:01, 29.19it/s] [0m[91mExtracting : bzip2-1.0.8-h7b6447c_0.tar.bz2:  17%|#6        | 7/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : tqdm-4.32.1-py_0.tar.bz2:  19%|#9        | 8/42 [00:00<00:01, 29.19it/s]      [0m[91mExtracting : wheel-0.33.4-py37_0.conda:  21%|##1       | 9/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : pyopenssl-19.0.0-py37_0.conda:  24%|##3       | 10/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : zstd-1.3.7-h0b5b093_0.conda:  26%|##6       | 11/42 [00:00<00:01, 29.19it/s]  [0m[91mExtracting : asn1crypto-0.24.0-py37_0.conda:  29%|##8       | 12/42 [00:00<00:01, 29.19it/s][0m[91mExtracting : libedit-3.1.20181209-hc058e9b_0.conda:  31%|###       | 13/42 [00:00<00:00, 29.19it/s][0m[91mExtracting : readline-7.0-h7b6447c_5.conda:  33%|###3      | 14/42 [00:00<00:00, 29.19it/s]        [0m[91mExtracting : conda-package-handling-1.3.11-py37_0.tar.bz2:  36%|###5      | 15/42 [00:00<00:00, 29.19it/s][0m[91mExtracting : ca-certificates-2019.5.15-0.conda:  38%|###8      | 16/42 [00:00<00:00, 29.19it/s]           [0m[91mExtracting : certifi-2019.6.16-py37_0.conda:  40%|####      | 17/42 [00:00<00:00, 29.19it/s]   [0m[91mExtracting : urllib3-1.24.2-py37_0.conda:  43%|####2     | 18/42 [00:00<00:00, 29.19it/s]   [0m[91mExtracting : idna-2.8-py37_0.conda:  45%|####5     | 19/42 [00:00<00:00, 29.19it/s]      Extracting : idna-2.8-py37_0.conda:  48%|####7     | 20/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : six-1.12.0-py37_0.conda:  48%|####7     | 20/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : openssl-1.1.1c-h7b6447c_1.conda:  50%|#####     | 21/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : lz4-c-1.8.1.2-h14c3975_0.conda:  52%|#####2    | 22/42 [00:00<00:00, 38.82it/s] [0m[91mExtracting : cffi-1.12.3-py37h2e261b9_0.conda:  55%|#####4    | 23/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : lzo-2.10-h49e0be7_2.conda:  57%|#####7    | 24/42 [00:00<00:00, 38.82it/s]       [0m[91mExtracting : pycparser-2.19-py37_0.conda:  60%|#####9    | 25/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : ruamel_yaml-0.15.46-py37h14c3975_0.conda:  62%|######1   | 26/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : libstdcxx-ng-9.1.0-hdf63c60_0.conda:  64%|######4   | 27/42 [00:00<00:00, 38.82it/s]     [0m[91mExtracting : libarchive-3.3.3-h5d8350f_5.conda:  67%|######6   | 28/42 [00:00<00:00, 38.82it/s]  [0m[91mExtracting : cryptography-2.7-py37h1ba5d50_0.conda:  69%|######9   | 29/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : zlib-1.2.11-h7b6447c_3.conda:  71%|#######1  | 30/42 [00:00<00:00, 38.82it/s]         [0m[91mExtracting : xz-5.2.4-h14c3975_4.conda:  74%|#######3  | 31/42 [00:00<00:00, 38.82it/s]   [0m[91mExtracting : libxml2-2.9.9-hea5a465_1.conda:  76%|#######6  | 32/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : setuptools-41.0.1-py37_0.conda:  79%|#######8  | 33/42 [00:00<00:00, 38.82it/s][0m[91mExtracting : tk-8.6.8-hbc83047_0.conda:  81%|########  | 34/42 [00:00<00:00, 38.82it/s]     Extracting : tk-8.6.8-hbc83047_0.conda:  83%|########3 | 35/42 [00:00<00:00, 48.37it/s][0m[91mExtracting : chardet-3.0.4-py37_1.conda:  83%|########3 | 35/42 [00:00<00:00, 48.37it/s][0m[91mExtracting : pip-19.1.1-py37_0.conda:  86%|########5 | 36/42 [00:00<00:00, 48.37it/s]   [0m[91mExtracting : libgcc-ng-9.1.0-hdf63c60_0.conda:  88%|########8 | 37/42 [00:00<00:00, 48.37it/s][0m[91mExtracting : sqlite-3.29.0-h7b6447c_0.tar.bz2:  90%|######### | 38/42 [00:00<00:00, 48.37it/s][0m[91mExtracting : ncurses-6.1-he6710b0_1.conda:  93%|#########2| 39/42 [00:00<00:00, 48.37it/s]    [0m[91mExtracting : python-3.7.3-h0371630_0.conda:  95%|#########5| 40/42 [00:00<00:00, 48.37it/s][0m[91mExtracting : conda-4.7.10-py37_0.tar.bz2:  98%|#########7| 41/42 [00:00<00:00, 48.37it/s]  [0m[91m                                                                                         [0m[91m[0mCollecting package metadata (current_repodata.json): ...working... done
+[91m  0%|          | 0/42 [00:00<?, ?it/s][0m[91mExtracting : libffi-3.2.1-hd88cf55_4.conda:   0%|          | 0/42 [00:00<?, ?it/s][0m[91mExtracting : zlib-1.2.11-h7b6447c_3.conda:   2%|2         | 1/42 [00:00<00:03, 12.10it/s][0m[91mExtracting : ca-certificates-2019.5.15-0.conda:   5%|4         | 2/42 [00:00<00:01, 24.05it/s][0m[91mExtracting : pyopenssl-19.0.0-py37_0.conda:   7%|7         | 3/42 [00:00<00:01, 32.03it/s]    [0m[91mExtracting : yaml-0.1.7-had09818_2.conda:  10%|9         | 4/42 [00:00<00:00, 41.74it/s]  [0m[91mExtracting : certifi-2019.6.16-py37_0.conda:  12%|#1        | 5/42 [00:00<00:00, 51.83it/s][0m[91mExtracting : lz4-c-1.8.1.2-h14c3975_0.conda:  14%|#4        | 6/42 [00:00<00:00, 56.24it/s][0m[91mExtracting : lz4-c-1.8.1.2-h14c3975_0.conda:  17%|#6        | 7/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : pysocks-1.7.0-py37_0.conda:  17%|#6        | 7/42 [00:00<00:00, 65.57it/s]    [0m[91mExtracting : six-1.12.0-py37_0.conda:  19%|#9        | 8/42 [00:00<00:00, 65.57it/s]   [0m[91mExtracting : tqdm-4.32.1-py_0.tar.bz2:  21%|##1       | 9/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : requests-2.22.0-py37_0.conda:  24%|##3       | 10/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : python-libarchive-c-2.8-py37_11.tar.bz2:  26%|##6       | 11/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : libedit-3.1.20181209-hc058e9b_0.conda:  29%|##8       | 12/42 [00:00<00:00, 65.57it/s]  [0m[91mExtracting : readline-7.0-h7b6447c_5.conda:  31%|###       | 13/42 [00:00<00:00, 65.57it/s]        [0m[91mExtracting : chardet-3.0.4-py37_1.conda:  33%|###3      | 14/42 [00:00<00:00, 65.57it/s]   [0m[91mExtracting : bzip2-1.0.8-h7b6447c_0.tar.bz2:  36%|###5      | 15/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : cffi-1.12.3-py37h2e261b9_0.conda:  38%|###8      | 16/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : pycparser-2.19-py37_0.conda:  40%|####      | 17/42 [00:00<00:00, 65.57it/s]     [0m[91mExtracting : _libgcc_mutex-0.1-main.conda:  43%|####2     | 18/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : libarchive-3.3.3-h5d8350f_5.conda:  45%|####5     | 19/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : ruamel_yaml-0.15.46-py37h14c3975_0.conda:  48%|####7     | 20/42 [00:00<00:00, 65.57it/s][0m[91mExtracting : pycosat-0.6.3-py37h14c3975_0.conda:  50%|#####     | 21/42 [00:00<00:00, 65.57it/s]      [0m[91mExtracting : xz-5.2.4-h14c3975_4.conda:  52%|#####2    | 22/42 [00:00<00:00, 65.57it/s]         Extracting : xz-5.2.4-h14c3975_4.conda:  55%|#####4    | 23/42 [00:00<00:00, 79.51it/s][0m[91mExtracting : zstd-1.3.7-h0b5b093_0.conda:  55%|#####4    | 23/42 [00:00<00:00, 79.51it/s][0m[91mExtracting : urllib3-1.24.2-py37_0.conda:  57%|#####7    | 24/42 [00:00<00:00, 79.51it/s][0m[91mExtracting : idna-2.8-py37_0.conda:  60%|#####9    | 25/42 [00:00<00:00, 79.51it/s]      [0m[91mExtracting : conda-package-handling-1.3.11-py37_0.tar.bz2:  62%|######1   | 26/42 [00:00<00:00, 79.51it/s][0m[91mExtracting : libgcc-ng-9.1.0-hdf63c60_0.conda:  64%|######4   | 27/42 [00:00<00:00, 79.51it/s]            [0m[91mExtracting : asn1crypto-0.24.0-py37_0.conda:  67%|######6   | 28/42 [00:00<00:00, 79.51it/s]  [0m[91mExtracting : libstdcxx-ng-9.1.0-hdf63c60_0.conda:  69%|######9   | 29/42 [00:00<00:00, 79.51it/s][0m[91mExtracting : openssl-1.1.1c-h7b6447c_1.conda:  71%|#######1  | 30/42 [00:00<00:00, 79.51it/s]    [0m[91mExtracting : libxml2-2.9.9-hea5a465_1.conda:  74%|#######3  | 31/42 [00:00<00:00, 79.51it/s] [0m[91mExtracting : cryptography-2.7-py37h1ba5d50_0.conda:  76%|#######6  | 32/42 [00:00<00:00, 79.51it/s]Extracting : cryptography-2.7-py37h1ba5d50_0.conda:  79%|#######8  | 33/42 [00:00<00:00, 83.04it/s][0m[91mExtracting : wheel-0.33.4-py37_0.conda:  79%|#######8  | 33/42 [00:00<00:00, 83.04it/s]            [0m[91mExtracting : lzo-2.10-h49e0be7_2.conda:  81%|########  | 34/42 [00:00<00:00, 83.04it/s][0m[91mExtracting : setuptools-41.0.1-py37_0.conda:  83%|########3 | 35/42 [00:00<00:00, 83.04it/s]Extracting : tk-8.6.8-hbc83047_0.conda:  86%|########5 | 36/42 [00:00<00:00, 83.04it/s]     [0m[91mExtracting : pip-19.1.1-py37_0.conda:  88%|########8 | 37/42 [00:00<00:00, 83.04it/s]  [0m[91mExtracting : sqlite-3.29.0-h7b6447c_0.tar.bz2:  90%|######### | 38/42 [00:00<00:00, 83.04it/s][0m[91mExtracting : ncurses-6.1-he6710b0_1.conda:  93%|#########2| 39/42 [00:00<00:00, 83.04it/s]    [0m[91mExtracting : python-3.7.3-h0371630_0.conda:  95%|#########5| 40/42 [00:00<00:00, 83.04it/s]Extracting : python-3.7.3-h0371630_0.conda:  98%|#########7| 41/42 [00:00<00:00, 37.72it/s][0m[91mExtracting : conda-4.7.10-py37_0.tar.bz2:  98%|#########7| 41/42 [00:00<00:00, 37.72it/s]  [0m[91m                                                                                         [0m[91m[0mCollecting package metadata (current_repodata.json): ...working... done
 Solving environment: ...working... done
 
 ## Package Plan ##
@@ -138,17 +126,7 @@ The following NEW packages will be INSTALLED:
 Preparing transaction: ...working... done
 Executing transaction: ...working... done
 installation finished.
- ---> e8532c5f365f
-Removing intermediate container 3a3992511106
-Step 10/17 : RUN rm ~/tool/Miniconda3-latest-Linux-x86_64.sh
- ---> Running in 7a6de5e1d7d7
-
-[91m[0m ---> 8bb98cb7c584
-Removing intermediate container 7a6de5e1d7d7
-Step 11/17 : RUN sh ~/tool/plant.install.sh .
- ---> Running in 524f35b26ae1
-
-[91m[0mCollecting package metadata (current_repodata.json): ...working... done
+Collecting package metadata (current_repodata.json): ...working... done
 Solving environment: ...working... done
 
 ## Package Plan ##
@@ -196,23 +174,25 @@ The following packages will be downloaded:
 
     package                    |            build
     ---------------------------|-----------------
-    asn1crypto-1.0.1           |           py37_0         161 KB
+    asn1crypto-1.2.0           |           py37_0         162 KB
     astropy-3.2.2              |   py37h7b6447c_0         7.1 MB
     atomicwrites-1.3.0         |           py37_1          13 KB
-    attrs-19.2.0               |             py_0          39 KB
+    attrs-19.3.0               |             py_0          39 KB
     backcall-0.1.0             |           py37_0          20 KB
     blas-1.0                   |              mkl           6 KB
     bleach-3.1.0               |           py37_0         220 KB
     bzip2-1.0.8                |       h7b6447c_0          78 KB
-    ca-certificates-2019.8.28  |                0         132 KB
+    ca-certificates-2019.10.16 |                0         131 KB
     cairo-1.14.12              |       h8948797_3         906 KB
     certifi-2019.9.11          |           py37_0         154 KB
+    cffi-1.13.0                |   py37h2e261b9_0         224 KB
     chardet-3.0.4              |        py37_1003         174 KB
     cloudpickle-1.2.2          |             py_0          29 KB
+    cryptography-2.8           |   py37h1ba5d50_0         612 KB
     curl-7.65.3                |       hbc83047_0         130 KB
     cycler-0.10.0              |           py37_0          13 KB
     cytoolz-0.10.0             |   py37h7b6447c_0         374 KB
-    dask-core-2.5.2            |             py_0         579 KB
+    dask-core-2.6.0            |             py_0         578 KB
     dbus-1.13.6                |       h746ee38_0         499 KB
     decorator-4.4.0            |           py37_1          19 KB
     defusedxml-0.6.0           |             py_0          23 KB
@@ -232,7 +212,7 @@ The following packages will be downloaded:
     hdf4-4.2.13                |       h3ca952b_2         714 KB
     hdf5-1.10.4                |       hb1b8bf9_0         3.9 MB
     icu-58.2                   |       h9c2bf20_1        10.3 MB
-    imageio-2.6.0              |           py37_0         3.4 MB
+    imageio-2.6.1              |           py37_0         3.3 MB
     importlib_metadata-0.23    |           py37_0          43 KB
     intel-openmp-2019.4        |              243         729 KB
     ipykernel-5.1.2            |   py37h39e3cac_0         170 KB
@@ -243,11 +223,11 @@ The following packages will be downloaded:
     jinja2-2.10.3              |             py_0          95 KB
     jpeg-9b                    |       h024ee3a_2         214 KB
     json-c-0.13.1              |       h1bed415_0          64 KB
-    jsonschema-3.0.2           |           py37_0          92 KB
+    jsonschema-3.1.1           |           py37_0          92 KB
     jupyter-1.0.0              |           py37_7           6 KB
-    jupyter_client-5.3.3       |           py37_1         137 KB
+    jupyter_client-5.3.4       |           py37_0         136 KB
     jupyter_console-6.0.0      |           py37_0          37 KB
-    jupyter_core-4.5.0         |             py_0          48 KB
+    jupyter_core-4.6.0         |           py37_0          74 KB
     kealib-1.4.7               |       hd0c454d_6         154 KB
     kiwisolver-1.1.0           |   py37he6710b0_0          82 KB
     krb5-1.16.1                |       h173b8e3_7         1.2 MB
@@ -276,13 +256,13 @@ The following packages will be downloaded:
     more-itertools-7.2.0       |           py37_0         100 KB
     nbconvert-5.6.0            |           py37_1         491 KB
     nbformat-4.4.0             |           py37_0         128 KB
-    networkx-2.3               |             py_0         1.1 MB
+    networkx-2.4               |             py_0         1.2 MB
     notebook-6.0.1             |           py37_0         6.0 MB
     numpy-1.17.2               |   py37haad9e8e_0           4 KB
     numpy-base-1.17.2          |   py37hde5b4d6_0         4.2 MB
     olefile-0.46               |           py37_0          50 KB
     openjpeg-2.3.0             |       h05c96fa_1         301 KB
-    openssl-1.1.1d             |       h7b6447c_2         2.5 MB
+    openssl-1.1.1d             |       h7b6447c_3         3.7 MB
     packaging-19.2             |             py_0          30 KB
     pandoc-2.2.3.2             |                0        14.0 MB
     pandocfilters-1.4.2        |           py37_1          13 KB
@@ -291,9 +271,9 @@ The following packages will be downloaded:
     pexpect-4.7.0              |           py37_0          80 KB
     pickleshare-0.7.5          |           py37_0          13 KB
     pillow-6.2.0               |   py37h34e0f95_0         643 KB
-    pip-19.2.3                 |           py37_0         1.9 MB
+    pip-19.3.1                 |           py37_0         1.9 MB
     pixman-0.38.0              |       h7b6447c_0         364 KB
-    plant-0.1.11dev            |                0         312 KB  plant
+    plant-0.1.10dev            |                0         312 KB  plant
     pluggy-0.13.0              |           py37_0          31 KB
     poppler-0.65.0             |       h581218d_1         1.3 MB
     poppler-data-0.4.9         |                0         1.9 MB
@@ -317,7 +297,7 @@ The following packages will be downloaded:
     python-3.7.4               |       h265db76_1        32.1 MB
     python-dateutil-2.8.0      |           py37_0         266 KB
     pytz-2019.3                |             py_0         231 KB
-    pywavelets-1.0.3           |   py37hdd07704_1         3.5 MB
+    pywavelets-1.1.1           |   py37h7b6447c_0         4.4 MB
     pyzmq-18.1.0               |   py37he6710b0_0         455 KB
     qt-5.9.7                   |       h5867ecd_1        68.5 MB
     qtconsole-4.5.5            |             py_0          94 KB
@@ -340,30 +320,30 @@ The following packages will be downloaded:
     zeromq-4.3.1               |       he6710b0_3         496 KB
     zipp-0.6.0                 |             py_0           9 KB
     ------------------------------------------------------------
-                                           Total:       420.8 MB
+                                           Total:       423.8 MB
 
 The following NEW packages will be INSTALLED:
 
   _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
-  asn1crypto         pkgs/main/linux-64::asn1crypto-1.0.1-py37_0
+  asn1crypto         pkgs/main/linux-64::asn1crypto-1.2.0-py37_0
   astropy            pkgs/main/linux-64::astropy-3.2.2-py37h7b6447c_0
   atomicwrites       pkgs/main/linux-64::atomicwrites-1.3.0-py37_1
-  attrs              pkgs/main/noarch::attrs-19.2.0-py_0
+  attrs              pkgs/main/noarch::attrs-19.3.0-py_0
   backcall           pkgs/main/linux-64::backcall-0.1.0-py37_0
   blas               pkgs/main/linux-64::blas-1.0-mkl
   bleach             pkgs/main/linux-64::bleach-3.1.0-py37_0
   bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
-  ca-certificates    pkgs/main/linux-64::ca-certificates-2019.8.28-0
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2019.10.16-0
   cairo              pkgs/main/linux-64::cairo-1.14.12-h8948797_3
   certifi            pkgs/main/linux-64::certifi-2019.9.11-py37_0
-  cffi               pkgs/main/linux-64::cffi-1.12.3-py37h2e261b9_0
+  cffi               pkgs/main/linux-64::cffi-1.13.0-py37h2e261b9_0
   chardet            pkgs/main/linux-64::chardet-3.0.4-py37_1003
   cloudpickle        pkgs/main/noarch::cloudpickle-1.2.2-py_0
-  cryptography       pkgs/main/linux-64::cryptography-2.7-py37h1ba5d50_0
+  cryptography       pkgs/main/linux-64::cryptography-2.8-py37h1ba5d50_0
   curl               pkgs/main/linux-64::curl-7.65.3-hbc83047_0
   cycler             pkgs/main/linux-64::cycler-0.10.0-py37_0
   cytoolz            pkgs/main/linux-64::cytoolz-0.10.0-py37h7b6447c_0
-  dask-core          pkgs/main/noarch::dask-core-2.5.2-py_0
+  dask-core          pkgs/main/noarch::dask-core-2.6.0-py_0
   dbus               pkgs/main/linux-64::dbus-1.13.6-h746ee38_0
   decorator          pkgs/main/linux-64::decorator-4.4.0-py37_1
   defusedxml         pkgs/main/noarch::defusedxml-0.6.0-py_0
@@ -384,7 +364,7 @@ The following NEW packages will be INSTALLED:
   hdf5               pkgs/main/linux-64::hdf5-1.10.4-hb1b8bf9_0
   icu                pkgs/main/linux-64::icu-58.2-h9c2bf20_1
   idna               pkgs/main/linux-64::idna-2.8-py37_0
-  imageio            pkgs/main/linux-64::imageio-2.6.0-py37_0
+  imageio            pkgs/main/linux-64::imageio-2.6.1-py37_0
   importlib_metadata pkgs/main/linux-64::importlib_metadata-0.23-py37_0
   intel-openmp       pkgs/main/linux-64::intel-openmp-2019.4-243
   ipykernel          pkgs/main/linux-64::ipykernel-5.1.2-py37h39e3cac_0
@@ -395,11 +375,11 @@ The following NEW packages will be INSTALLED:
   jinja2             pkgs/main/noarch::jinja2-2.10.3-py_0
   jpeg               pkgs/main/linux-64::jpeg-9b-h024ee3a_2
   json-c             pkgs/main/linux-64::json-c-0.13.1-h1bed415_0
-  jsonschema         pkgs/main/linux-64::jsonschema-3.0.2-py37_0
+  jsonschema         pkgs/main/linux-64::jsonschema-3.1.1-py37_0
   jupyter            pkgs/main/linux-64::jupyter-1.0.0-py37_7
-  jupyter_client     pkgs/main/linux-64::jupyter_client-5.3.3-py37_1
+  jupyter_client     pkgs/main/linux-64::jupyter_client-5.3.4-py37_0
   jupyter_console    pkgs/main/linux-64::jupyter_console-6.0.0-py37_0
-  jupyter_core       pkgs/main/noarch::jupyter_core-4.5.0-py_0
+  jupyter_core       pkgs/main/linux-64::jupyter_core-4.6.0-py37_0
   kealib             pkgs/main/linux-64::kealib-1.4.7-hd0c454d_6
   kiwisolver         pkgs/main/linux-64::kiwisolver-1.1.0-py37he6710b0_0
   krb5               pkgs/main/linux-64::krb5-1.16.1-h173b8e3_7
@@ -434,13 +414,13 @@ The following NEW packages will be INSTALLED:
   nbconvert          pkgs/main/linux-64::nbconvert-5.6.0-py37_1
   nbformat           pkgs/main/linux-64::nbformat-4.4.0-py37_0
   ncurses            pkgs/main/linux-64::ncurses-6.1-he6710b0_1
-  networkx           pkgs/main/noarch::networkx-2.3-py_0
+  networkx           pkgs/main/noarch::networkx-2.4-py_0
   notebook           pkgs/main/linux-64::notebook-6.0.1-py37_0
   numpy              pkgs/main/linux-64::numpy-1.17.2-py37haad9e8e_0
   numpy-base         pkgs/main/linux-64::numpy-base-1.17.2-py37hde5b4d6_0
   olefile            pkgs/main/linux-64::olefile-0.46-py37_0
   openjpeg           pkgs/main/linux-64::openjpeg-2.3.0-h05c96fa_1
-  openssl            pkgs/main/linux-64::openssl-1.1.1d-h7b6447c_2
+  openssl            pkgs/main/linux-64::openssl-1.1.1d-h7b6447c_3
   packaging          pkgs/main/noarch::packaging-19.2-py_0
   pandoc             pkgs/main/linux-64::pandoc-2.2.3.2-0
   pandocfilters      pkgs/main/linux-64::pandocfilters-1.4.2-py37_1
@@ -449,9 +429,9 @@ The following NEW packages will be INSTALLED:
   pexpect            pkgs/main/linux-64::pexpect-4.7.0-py37_0
   pickleshare        pkgs/main/linux-64::pickleshare-0.7.5-py37_0
   pillow             pkgs/main/linux-64::pillow-6.2.0-py37h34e0f95_0
-  pip                pkgs/main/linux-64::pip-19.2.3-py37_0
+  pip                pkgs/main/linux-64::pip-19.3.1-py37_0
   pixman             pkgs/main/linux-64::pixman-0.38.0-h7b6447c_0
-  plant              plant/noarch::plant-0.1.11dev-0
+  plant              plant/noarch::plant-0.1.10dev-0
   pluggy             pkgs/main/linux-64::pluggy-0.13.0-py37_0
   poppler            pkgs/main/linux-64::poppler-0.65.0-h581218d_1
   poppler-data       pkgs/main/linux-64::poppler-data-0.4.9-0
@@ -477,7 +457,7 @@ The following NEW packages will be INSTALLED:
   python             pkgs/main/linux-64::python-3.7.4-h265db76_1
   python-dateutil    pkgs/main/linux-64::python-dateutil-2.8.0-py37_0
   pytz               pkgs/main/noarch::pytz-2019.3-py_0
-  pywavelets         pkgs/main/linux-64::pywavelets-1.0.3-py37hdd07704_1
+  pywavelets         pkgs/main/linux-64::pywavelets-1.1.1-py37h7b6447c_0
   pyzmq              pkgs/main/linux-64::pyzmq-18.1.0-py37he6710b0_0
   qt                 pkgs/main/linux-64::qt-5.9.7-h5867ecd_1
   qtconsole          pkgs/main/noarch::qtconsole-4.5.5-py_0
@@ -512,149 +492,151 @@ The following NEW packages will be INSTALLED:
 Proceed ([y]/n)? 
 
 Downloading and Extracting Packages
-python-3.7.4         | 32.1 MB   |            |   0% python-3.7.4         | 32.1 MB   | #3         |  14% python-3.7.4         | 32.1 MB   | ####8      |  48% python-3.7.4         | 32.1 MB   | ########2  |  83% python-3.7.4         | 32.1 MB   | ########## | 100% 
-pyparsing-2.4.2      | 61 KB     |            |   0% pyparsing-2.4.2      | 61 KB     | ########## | 100% 
-libkml-1.3.0         | 564 KB    |            |   0% libkml-1.3.0         | 564 KB    | ########## | 100% 
-gmp-6.1.2            | 514 KB    |            |   0% gmp-6.1.2            | 514 KB    | ########## | 100% 
-numpy-1.17.2         | 4 KB      |            |   0% numpy-1.17.2         | 4 KB      | ########## | 100% 
-ca-certificates-2019 | 132 KB    |            |   0% ca-certificates-2019 | 132 KB    | ########## | 100% 
-matplotlib-3.1.1     | 5.0 MB    |            |   0% matplotlib-3.1.1     | 5.0 MB    | ########## | 100% 
-wcwidth-0.1.7        | 22 KB     |            |   0% wcwidth-0.1.7        | 22 KB     | ########## | 100% 
-jpeg-9b              | 214 KB    |            |   0% jpeg-9b              | 214 KB    | ########## | 100% 
-libuuid-1.0.3        | 15 KB     |            |   0% libuuid-1.0.3        | 15 KB     | ########## | 100% 
-blas-1.0             | 6 KB      |            |   0% blas-1.0             | 6 KB      | ########## | 100% 
-jupyter_client-5.3.3 | 137 KB    |            |   0% jupyter_client-5.3.3 | 137 KB    | ########## | 100% 
-intel-openmp-2019.4  | 729 KB    |            |   0% intel-openmp-2019.4  | 729 KB    | ########## | 100% 
-libdap4-3.19.1       | 1.0 MB    |            |   0% libdap4-3.19.1       | 1.0 MB    | ########## | 100% 
-libnetcdf-4.6.1      | 833 KB    |            |   0% libnetcdf-4.6.1      | 833 KB    | ########## | 100% 
-openssl-1.1.1d       | 2.5 MB    |            |   0% openssl-1.1.1d       | 2.5 MB    | ########## | 100% 
-ipython-7.8.0        | 985 KB    |            |   0% ipython-7.8.0        | 985 KB    | ########## | 100% 
-scikit-image-0.15.0  | 24.8 MB   |            |   0% scikit-image-0.15.0  | 24.8 MB   | ###7       |  38% scikit-image-0.15.0  | 24.8 MB   | ########3  |  83% scikit-image-0.15.0  | 24.8 MB   | ########## | 100% 
-poppler-0.65.0       | 1.3 MB    |            |   0% poppler-0.65.0       | 1.3 MB    | ########## | 100% 
-libboost-1.67.0      | 13.0 MB   |            |   0% libboost-1.67.0      | 13.0 MB   | #######2   |  73% libboost-1.67.0      | 13.0 MB   | ########## | 100% 
-pytest-remotedata-0. | 15 KB     |            |   0% pytest-remotedata-0. | 15 KB     | ########## | 100% 
-zeromq-4.3.1         | 496 KB    |            |   0% zeromq-4.3.1         | 496 KB    | ########## | 100% 
-libpq-11.2           | 2.0 MB    |            |   0% libpq-11.2           | 2.0 MB    | ########## | 100% 
-json-c-0.13.1        | 64 KB     |            |   0% json-c-0.13.1        | 64 KB     | ########## | 100% 
-packaging-19.2       | 30 KB     |            |   0% packaging-19.2       | 30 KB     | ########## | 100% 
-giflib-5.1.4         | 68 KB     |            |   0% giflib-5.1.4         | 68 KB     | ########## | 100% 
-markupsafe-1.1.1     | 29 KB     |            |   0% markupsafe-1.1.1     | 29 KB     | ########## | 100% 
-libgfortran-ng-7.3.0 | 1006 KB   |            |   0% libgfortran-ng-7.3.0 | 1006 KB   | ########## | 100% 
-pytest-5.2.1         | 364 KB    |            |   0% pytest-5.2.1         | 364 KB    | ########## | 100% 
-send2trash-1.5.0     | 16 KB     |            |   0% send2trash-1.5.0     | 16 KB     | ########## | 100% 
-pywavelets-1.0.3     | 3.5 MB    |            |   0% pywavelets-1.0.3     | 3.5 MB    | ########## | 100% 
-tornado-6.0.3        | 584 KB    |            |   0% tornado-6.0.3        | 584 KB    | ########## | 100% 
-libssh2-1.8.2        | 226 KB    |            |   0% libssh2-1.8.2        | 226 KB    | ########## | 100% 
-pixman-0.38.0        | 364 KB    |            |   0% pixman-0.38.0        | 364 KB    | ########## | 100% 
-jupyter_core-4.5.0   | 48 KB     |            |   0% jupyter_core-4.5.0   | 48 KB     | ########## | 100% 
-pip-19.2.3           | 1.9 MB    |            |   0% pip-19.2.3           | 1.9 MB    | ########## | 100% 
-kealib-1.4.7         | 154 KB    |            |   0% kealib-1.4.7         | 154 KB    | ########## | 100% 
-py-1.8.0             | 148 KB    |            |   0% py-1.8.0             | 148 KB    | ########## | 100% 
-pexpect-4.7.0        | 80 KB     |            |   0% pexpect-4.7.0        | 80 KB     | ########## | 100% 
-libgdal-2.3.3        | 11.1 MB   |            |   0% libgdal-2.3.3        | 11.1 MB   | #######1   |  71% libgdal-2.3.3        | 11.1 MB   | ########## | 100% 
-atomicwrites-1.3.0   | 13 KB     |            |   0% atomicwrites-1.3.0   | 13 KB     | ########## | 100% 
+pytest-astropy-0.5.0 | 7 KB      |            |   0% pytest-astropy-0.5.0 | 7 KB      | ########## | 100% 
+pywavelets-1.1.1     | 4.4 MB    |            |   0% pywavelets-1.1.1     | 4.4 MB    | ########## | 100% 
+qtconsole-4.5.5      | 94 KB     |            |   0% qtconsole-4.5.5      | 94 KB     | ########## | 100% 
+toolz-0.10.0         | 50 KB     |            |   0% toolz-0.10.0         | 50 KB     | ########## | 100% 
+decorator-4.4.0      | 19 KB     |            |   0% decorator-4.4.0      | 19 KB     | ########## | 100% 
+python-dateutil-2.8. | 266 KB    |            |   0% python-dateutil-2.8. | 266 KB    | ########## | 100% 
+networkx-2.4         | 1.2 MB    |            |   0% networkx-2.4         | 1.2 MB    | ########## | 100% 
+entrypoints-0.3      | 12 KB     |            |   0% entrypoints-0.3      | 12 KB     | ########## | 100% 
 jupyter_console-6.0. | 37 KB     |            |   0% jupyter_console-6.0. | 37 KB     | ########## | 100% 
-cairo-1.14.12        | 906 KB    |            |   0% cairo-1.14.12        | 906 KB    | ########## | 100% 
-cytoolz-0.10.0       | 374 KB    |            |   0% cytoolz-0.10.0       | 374 KB    | ########## | 100% 
-zipp-0.6.0           | 9 KB      |            |   0% zipp-0.6.0           | 9 KB      | ########## | 100% 
-parso-0.5.1          | 68 KB     |            |   0% parso-0.5.1          | 68 KB     | ########## | 100% 
-numpy-base-1.17.2    | 4.2 MB    |            |   0% numpy-base-1.17.2    | 4.2 MB    | ########## | 100% 
-ipython_genutils-0.2 | 39 KB     |            |   0% ipython_genutils-0.2 | 39 KB     | ########## | 100% 
-attrs-19.2.0         | 39 KB     |            |   0% attrs-19.2.0         | 39 KB     | ########## | 100% 
-sqlite-3.30.0        | 1.9 MB    |            |   0% sqlite-3.30.0        | 1.9 MB    | ########## | 100% 
-chardet-3.0.4        | 174 KB    |            |   0% chardet-3.0.4        | 174 KB    | ########## | 100% 
-olefile-0.46         | 50 KB     |            |   0% olefile-0.46         | 50 KB     | ########## | 100% 
-pytest-openfiles-0.4 | 10 KB     |            |   0% pytest-openfiles-0.4 | 10 KB     | ########## | 100% 
-openjpeg-2.3.0       | 301 KB    |            |   0% openjpeg-2.3.0       | 301 KB    | 5          |   5% openjpeg-2.3.0       | 301 KB    | ########## | 100% 
+widgetsnbextension-3 | 862 KB    |            |   0% widgetsnbextension-3 | 862 KB    | ########## | 100% 
+libgfortran-ng-7.3.0 | 1006 KB   |            |   0% libgfortran-ng-7.3.0 | 1006 KB   | ########## | 100% 
+prometheus_client-0. | 42 KB     |            |   0% prometheus_client-0. | 42 KB     | ########## | 100% 
+ipython-7.8.0        | 985 KB    |            |   0% ipython-7.8.0        | 985 KB    | ########## | 100% 
+expat-2.2.6          | 146 KB    |            |   0% expat-2.2.6          | 146 KB    | ########## | 100% 
+webencodings-0.5.1   | 19 KB     |            |   0% webencodings-0.5.1   | 19 KB     | ########## | 100% 
+setuptools-41.4.0    | 651 KB    |            |   0% setuptools-41.4.0    | 651 KB    | ########## | 100% 
 bzip2-1.0.8          | 78 KB     |            |   0% bzip2-1.0.8          | 78 KB     | ########## | 100% 
+psutil-5.6.3         | 313 KB    |            |   0% psutil-5.6.3         | 313 KB    | ########## | 100% 
+pytest-openfiles-0.4 | 10 KB     |            |   0% pytest-openfiles-0.4 | 10 KB     | ########## | 100% 
+astropy-3.2.2        | 7.1 MB    |            |   0% astropy-3.2.2        | 7.1 MB    | ########## | 100% 
+giflib-5.1.4         | 68 KB     |            |   0% giflib-5.1.4         | 68 KB     | ########## | 100% 
+pyzmq-18.1.0         | 455 KB    |            |   0% pyzmq-18.1.0         | 455 KB    | ########## | 100% 
+glib-2.56.2          | 3.9 MB    |            |   0% glib-2.56.2          | 3.9 MB    | ########## | 100% 
+zipp-0.6.0           | 9 KB      |            |   0% zipp-0.6.0           | 9 KB      | ########## | 100% 
+numpy-1.17.2         | 4 KB      |            |   0% numpy-1.17.2         | 4 KB      | ########## | 100% 
+pysocks-1.7.1        | 30 KB     |            |   0% pysocks-1.7.1        | 30 KB     | ########## | 100% 
+libboost-1.67.0      | 13.0 MB   |            |   0% libboost-1.67.0      | 13.0 MB   | ######7    |  67% libboost-1.67.0      | 13.0 MB   | ########## | 100% 
+gdal-2.3.3           | 992 KB    |            |   0% gdal-2.3.3           | 992 KB    | ########## | 100% 
+qt-5.9.7             | 68.5 MB   |            |   0% qt-5.9.7             | 68.5 MB   | #2         |  13% qt-5.9.7             | 68.5 MB   | ##8        |  28% qt-5.9.7             | 68.5 MB   | ####3      |  44% qt-5.9.7             | 68.5 MB   | #####9     |  59% qt-5.9.7             | 68.5 MB   | #######4   |  75% qt-5.9.7             | 68.5 MB   | #########  |  90% qt-5.9.7             | 68.5 MB   | ########## | 100% 
+sqlite-3.30.0        | 1.9 MB    |            |   0% sqlite-3.30.0        | 1.9 MB    | ########## | 100% 
+pyrsistent-0.15.4    | 92 KB     |            |   0% pyrsistent-0.15.4    | 92 KB     | ########## | 100% 
+cloudpickle-1.2.2    | 29 KB     |            |   0% cloudpickle-1.2.2    | 29 KB     | ########## | 100% 
+pytest-5.2.1         | 364 KB    |            |   0% pytest-5.2.1         | 364 KB    | ########## | 100% 
+notebook-6.0.1       | 6.0 MB    |            |   0% notebook-6.0.1       | 6.0 MB    | ########## | 100% 
+curl-7.65.3          | 130 KB    |            |   0% curl-7.65.3          | 130 KB    | ########## | 100% 
+jupyter_client-5.3.4 | 136 KB    |            |   0% jupyter_client-5.3.4 | 136 KB    | ########## | 100% 
+libdap4-3.19.1       | 1.0 MB    |            |   0% libdap4-3.19.1       | 1.0 MB    | ########## | 100% 
+pandoc-2.2.3.2       | 14.0 MB   |            |   0% pandoc-2.2.3.2       | 14.0 MB   | ######4    |  64% pandoc-2.2.3.2       | 14.0 MB   | ########## | 100% 
+testpath-0.4.2       | 86 KB     |            |   0% testpath-0.4.2       | 86 KB     | ########## | 100% 
+prompt_toolkit-2.0.1 | 227 KB    |            |   0% prompt_toolkit-2.0.1 | 227 KB    | ########## | 100% 
+jupyter-1.0.0        | 6 KB      |            |   0% jupyter-1.0.0        | 6 KB      | ########## | 100% 
+dask-core-2.6.0      | 578 KB    |            |   0% dask-core-2.6.0      | 578 KB    | ########## | 100% 
+hdf4-4.2.13          | 714 KB    |            |   0% hdf4-4.2.13          | 714 KB    | ########## | 100% 
+libspatialite-4.3.0a | 2.1 MB    |            |   0% libspatialite-4.3.0a | 2.1 MB    | ########## | 100% 
+kealib-1.4.7         | 154 KB    |            |   0% kealib-1.4.7         | 154 KB    | ########## | 100% 
+pytest-doctestplus-0 | 18 KB     |            |   0% pytest-doctestplus-0 | 18 KB     | ########## | 100% 
+cffi-1.13.0          | 224 KB    |            |   0% cffi-1.13.0          | 224 KB    | ########## | 100% 
+terminado-0.8.2      | 23 KB     |            |   0% terminado-0.8.2      | 23 KB     | ########## | 100% 
+gstreamer-1.14.0     | 3.1 MB    |            |   0% gstreamer-1.14.0     | 3.1 MB    | ########## | 100% 
+markupsafe-1.1.1     | 29 KB     |            |   0% markupsafe-1.1.1     | 29 KB     | ########## | 100% 
+defusedxml-0.6.0     | 23 KB     |            |   0% defusedxml-0.6.0     | 23 KB     | ########## | 100% 
+zeromq-4.3.1         | 496 KB    |            |   0% zeromq-4.3.1         | 496 KB    | ########## | 100% 
+ptyprocess-0.6.0     | 23 KB     |            |   0% ptyprocess-0.6.0     | 23 KB     | ########## | 100% 
+poppler-0.65.0       | 1.3 MB    |            |   0% poppler-0.65.0       | 1.3 MB    | ########## | 100% 
+pexpect-4.7.0        | 80 KB     |            |   0% pexpect-4.7.0        | 80 KB     | ########## | 100% 
+nbconvert-5.6.0      | 491 KB    |            |   0% nbconvert-5.6.0      | 491 KB    | ########## | 100% 
+freexl-1.0.5         | 40 KB     |            |   0% freexl-1.0.5         | 40 KB     | ########## | 100% 
+ipykernel-5.1.2      | 170 KB    |            |   0% ipykernel-5.1.2      | 170 KB    | ########## | 100% 
+pip-19.3.1           | 1.9 MB    |            |   0% pip-19.3.1           | 1.9 MB    | ########## | 100% 
+blas-1.0             | 6 KB      |            |   0% blas-1.0             | 6 KB      | ########## | 100% 
+icu-58.2             | 10.3 MB   |            |   0% icu-58.2             | 10.3 MB   | #######2   |  73% icu-58.2             | 10.3 MB   | ########## | 100% 
+libssh2-1.8.2        | 226 KB    |            |   0% libssh2-1.8.2        | 226 KB    | ########## | 100% 
+scikit-image-0.15.0  | 24.8 MB   |            |   0% scikit-image-0.15.0  | 24.8 MB   | ###1       |  32% scikit-image-0.15.0  | 24.8 MB   | #######4   |  75% scikit-image-0.15.0  | 24.8 MB   | ########## | 100% 
+gmp-6.1.2            | 514 KB    |            |   0% gmp-6.1.2            | 514 KB    | ########## | 100% 
+openjpeg-2.3.0       | 301 KB    |            |   0% openjpeg-2.3.0       | 301 KB    | ########## | 100% 
+wheel-0.33.6         | 40 KB     |            |   0% wheel-0.33.6         | 40 KB     | ########## | 100% 
+libpng-1.6.37        | 278 KB    |            |   0% libpng-1.6.37        | 278 KB    | ########## | 100% 
+geos-3.7.1           | 1.2 MB    |            |   0% geos-3.7.1           | 1.2 MB    | ########## | 100% 
+openssl-1.1.1d       | 3.7 MB    |            |   0% openssl-1.1.1d       | 3.7 MB    | ########## | 100% 
+python-3.7.4         | 32.1 MB   |            |   0% python-3.7.4         | 32.1 MB   | ##4        |  24% python-3.7.4         | 32.1 MB   | #####7     |  57% python-3.7.4         | 32.1 MB   | ########9  |  90% python-3.7.4         | 32.1 MB   | ########## | 100% 
+tornado-6.0.3        | 584 KB    |            |   0% tornado-6.0.3        | 584 KB    | ########## | 100% 
+cytoolz-0.10.0       | 374 KB    |            |   0% cytoolz-0.10.0       | 374 KB    | ########## | 100% 
+ipywidgets-7.5.1     | 107 KB    |            |   0% ipywidgets-7.5.1     | 107 KB    | ########## | 100% 
+pytest-arraydiff-0.3 | 15 KB     |            |   0% pytest-arraydiff-0.3 | 15 KB     | ########## | 100% 
+freetype-2.9.1       | 550 KB    |            |   0% freetype-2.9.1       | 550 KB    | ########## | 100% 
+libgdal-2.3.3        | 11.1 MB   |            |   0% libgdal-2.3.3        | 11.1 MB   | #######2   |  73% libgdal-2.3.3        | 11.1 MB   | ########## | 100% 
+hdf5-1.10.4          | 3.9 MB    |            |   0% hdf5-1.10.4          | 3.9 MB    | ########## | 100% 
+imageio-2.6.1        | 3.3 MB    |            |   0% imageio-2.6.1        | 3.3 MB    | ########## | 100% 
+plant-0.1.10dev      | 312 KB    |            |   0% plant-0.1.10dev      | 312 KB    | 5          |   5% plant-0.1.10dev      | 312 KB    | ##         |  21% plant-0.1.10dev      | 312 KB    | ########2  |  82% plant-0.1.10dev      | 312 KB    | ########## | 100% 
+certifi-2019.9.11    | 154 KB    |            |   0% certifi-2019.9.11    | 154 KB    | ########## | 100% 
+mistune-0.8.4        | 55 KB     |            |   0% mistune-0.8.4        | 55 KB     | ########## | 100% 
+libnetcdf-4.6.1      | 833 KB    |            |   0% libnetcdf-4.6.1      | 833 KB    | ########## | 100% 
+atomicwrites-1.3.0   | 13 KB     |            |   0% atomicwrites-1.3.0   | 13 KB     | ########## | 100% 
+packaging-19.2       | 30 KB     |            |   0% packaging-19.2       | 30 KB     | ########## | 100% 
+libuuid-1.0.3        | 15 KB     |            |   0% libuuid-1.0.3        | 15 KB     | ########## | 100% 
+libtiff-4.0.10       | 435 KB    |            |   0% libtiff-4.0.10       | 435 KB    | ########## | 100% 
+pygments-2.4.2       | 664 KB    |            |   0% pygments-2.4.2       | 664 KB    | ########## | 100% 
+dbus-1.13.6          | 499 KB    |            |   0% dbus-1.13.6          | 499 KB    | ########## | 100% 
+asn1crypto-1.2.0     | 162 KB    |            |   0% asn1crypto-1.2.0     | 162 KB    | ########## | 100% 
+pickleshare-0.7.5    | 13 KB     |            |   0% pickleshare-0.7.5    | 13 KB     | ########## | 100% 
+sip-4.19.8           | 274 KB    |            |   0% sip-4.19.8           | 274 KB    | ########## | 100% 
+numpy-base-1.17.2    | 4.2 MB    |            |   0% numpy-base-1.17.2    | 4.2 MB    | ########## | 100% 
+pytz-2019.3          | 231 KB    |            |   0% pytz-2019.3          | 231 KB    | ########## | 100% 
+libxcb-1.13          | 421 KB    |            |   0% libxcb-1.13          | 421 KB    | ########## | 100% 
+importlib_metadata-0 | 43 KB     |            |   0% importlib_metadata-0 | 43 KB     | ########## | 100% 
+cairo-1.14.12        | 906 KB    |            |   0% cairo-1.14.12        | 906 KB    | ########## | 100% 
+cycler-0.10.0        | 13 KB     |            |   0% cycler-0.10.0        | 13 KB     | ########## | 100% 
+send2trash-1.5.0     | 16 KB     |            |   0% send2trash-1.5.0     | 16 KB     | ########## | 100% 
+traitlets-4.3.3      | 138 KB    |            |   0% traitlets-4.3.3      | 138 KB    | ########## | 100% 
+cryptography-2.8     | 612 KB    |            |   0% cryptography-2.8     | 612 KB    | ########## | 100% 
+pluggy-0.13.0        | 31 KB     |            |   0% pluggy-0.13.0        | 31 KB     | ########## | 100% 
+mkl_random-1.1.0     | 321 KB    |            |   0% mkl_random-1.1.0     | 321 KB    | ########## | 100% 
+libpq-11.2           | 2.0 MB    |            |   0% libpq-11.2           | 2.0 MB    | ########## | 100% 
+jsonschema-3.1.1     | 92 KB     |            |   0% jsonschema-3.1.1     | 92 KB     | ########## | 100% 
+proj4-5.2.0          | 6.6 MB    |            |   0% proj4-5.2.0          | 6.6 MB    | ########## | 100% 
+more-itertools-7.2.0 | 100 KB    |            |   0% more-itertools-7.2.0 | 100 KB    | ########## | 100% 
+matplotlib-3.1.1     | 5.0 MB    |            |   0% matplotlib-3.1.1     | 5.0 MB    | ########## | 100% 
 fontconfig-2.13.0    | 227 KB    |            |   0% fontconfig-2.13.0    | 227 KB    | ########## | 100% 
 pillow-6.2.0         | 643 KB    |            |   0% pillow-6.2.0         | 643 KB    | ########## | 100% 
-mkl-service-2.3.0    | 218 KB    |            |   0% mkl-service-2.3.0    | 218 KB    | ########## | 100% 
-testpath-0.4.2       | 86 KB     |            |   0% testpath-0.4.2       | 86 KB     | ########## | 100% 
-toolz-0.10.0         | 50 KB     |            |   0% toolz-0.10.0         | 50 KB     | ########## | 100% 
-libsodium-1.0.16     | 214 KB    |            |   0% libsodium-1.0.16     | 214 KB    | ########## | 100% 
-mkl_random-1.1.0     | 321 KB    |            |   0% mkl_random-1.1.0     | 321 KB    | ########## | 100% 
-scipy-1.3.1          | 14.0 MB   |            |   0% scipy-1.3.1          | 14.0 MB   | ######6    |  67% scipy-1.3.1          | 14.0 MB   | ########## | 100% 
-nbconvert-5.6.0      | 491 KB    |            |   0% nbconvert-5.6.0      | 491 KB    | ########## | 100% 
-mkl-2019.4           | 131.2 MB  |            |   0% mkl-2019.4           | 131.2 MB  | 6          |   7% mkl-2019.4           | 131.2 MB  | #4         |  15% mkl-2019.4           | 131.2 MB  | ##3        |  23% mkl-2019.4           | 131.2 MB  | ###1       |  31% mkl-2019.4           | 131.2 MB  | ###9       |  40% mkl-2019.4           | 131.2 MB  | ####7      |  48% mkl-2019.4           | 131.2 MB  | #####6     |  56% mkl-2019.4           | 131.2 MB  | ######3    |  64% mkl-2019.4           | 131.2 MB  | #######1   |  72% mkl-2019.4           | 131.2 MB  | #######9   |  80% mkl-2019.4           | 131.2 MB  | ########8  |  88% mkl-2019.4           | 131.2 MB  | #########5 |  96% mkl-2019.4           | 131.2 MB  | ########## | 100% 
-hdf4-4.2.13          | 714 KB    |            |   0% hdf4-4.2.13          | 714 KB    | ########## | 100% 
-dbus-1.13.6          | 499 KB    |            |   0% dbus-1.13.6          | 499 KB    | ########## | 100% 
-geos-3.7.1           | 1.2 MB    |            |   0% geos-3.7.1           | 1.2 MB    | ########## | 100% 
-mistune-0.8.4        | 55 KB     |            |   0% mistune-0.8.4        | 55 KB     | ########## | 100% 
-imageio-2.6.0        | 3.4 MB    |            |   0% imageio-2.6.0        | 3.4 MB    | ########## | 100% 
-ipykernel-5.1.2      | 170 KB    |            |   0% ipykernel-5.1.2      | 170 KB    | ########## | 100% 
-jupyter-1.0.0        | 6 KB      |            |   0% jupyter-1.0.0        | 6 KB      | ########## | 100% 
-defusedxml-0.6.0     | 23 KB     |            |   0% defusedxml-0.6.0     | 23 KB     | ########## | 100% 
-plant-0.1.11dev      | 312 KB    |            |   0% plant-0.1.11dev      | 312 KB    | 5          |   5% plant-0.1.11dev      | 312 KB    | ##         |  21% plant-0.1.11dev      | 312 KB    | ########2  |  82% plant-0.1.11dev      | 312 KB    | ########## | 100% 
-pandoc-2.2.3.2       | 14.0 MB   |            |   0% pandoc-2.2.3.2       | 14.0 MB   | #####9     |  60% pandoc-2.2.3.2       | 14.0 MB   | ########## | 100% 
-asn1crypto-1.0.1     | 161 KB    |            |   0% asn1crypto-1.0.1     | 161 KB    | ########## | 100% 
-ptyprocess-0.6.0     | 23 KB     |            |   0% ptyprocess-0.6.0     | 23 KB     | ########## | 100% 
-gdal-2.3.3           | 992 KB    |            |   0% gdal-2.3.3           | 992 KB    | ########## | 100% 
-sip-4.19.8           | 274 KB    |            |   0% sip-4.19.8           | 274 KB    | ########## | 100% 
-curl-7.65.3          | 130 KB    |            |   0% curl-7.65.3          | 130 KB    | ########## | 100% 
-jsonschema-3.0.2     | 92 KB     |            |   0% jsonschema-3.0.2     | 92 KB     | ########## | 100% 
-glib-2.56.2          | 3.9 MB    |            |   0% glib-2.56.2          | 3.9 MB    | ########## | 100% 
-dask-core-2.5.2      | 579 KB    |            |   0% dask-core-2.5.2      | 579 KB    | ########## | 100% 
-pickleshare-0.7.5    | 13 KB     |            |   0% pickleshare-0.7.5    | 13 KB     | ########## | 100% 
-wheel-0.33.6         | 40 KB     |            |   0% wheel-0.33.6         | 40 KB     | ########## | 100% 
-pcre-8.43            | 209 KB    |            |   0% pcre-8.43            | 209 KB    | ########## | 100% 
-psutil-5.6.3         | 313 KB    |            |   0% psutil-5.6.3         | 313 KB    | ########## | 100% 
-libpng-1.6.37        | 278 KB    |            |   0% libpng-1.6.37        | 278 KB    | ########## | 100% 
-pygments-2.4.2       | 664 KB    |            |   0% pygments-2.4.2       | 664 KB    | ########## | 100% 
-libtiff-4.0.10       | 435 KB    |            |   0% libtiff-4.0.10       | 435 KB    | ########## | 100% 
-notebook-6.0.1       | 6.0 MB    |            |   0% notebook-6.0.1       | 6.0 MB    | ########## | 100% 
-widgetsnbextension-3 | 862 KB    |            |   0% widgetsnbextension-3 | 862 KB    | ########## | 100% 
-h5py-2.9.0           | 991 KB    |            |   0% h5py-2.9.0           | 991 KB    | ########## | 100% 
-gstreamer-1.14.0     | 3.1 MB    |            |   0% gstreamer-1.14.0     | 3.1 MB    | ########## | 100% 
-poppler-data-0.4.9   | 1.9 MB    |            |   0% poppler-data-0.4.9   | 1.9 MB    | ########## | 100% 
-ipywidgets-7.5.1     | 107 KB    |            |   0% ipywidgets-7.5.1     | 107 KB    | ########## | 100% 
-jedi-0.15.1          | 704 KB    |            |   0% jedi-0.15.1          | 704 KB    | ########## | 100% 
-certifi-2019.9.11    | 154 KB    |            |   0% certifi-2019.9.11    | 154 KB    | ########## | 100% 
-decorator-4.4.0      | 19 KB     |            |   0% decorator-4.4.0      | 19 KB     | ########## | 100% 
-setuptools-41.4.0    | 651 KB    |            |   0% setuptools-41.4.0    | 651 KB    | ########## | 100% 
-bleach-3.1.0         | 220 KB    |            |   0% bleach-3.1.0         | 220 KB    | ########## | 100% 
-terminado-0.8.2      | 23 KB     |            |   0% terminado-0.8.2      | 23 KB     | ########## | 100% 
-qt-5.9.7             | 68.5 MB   |            |   0% qt-5.9.7             | 68.5 MB   | #3         |  13% qt-5.9.7             | 68.5 MB   | ##9        |  29% qt-5.9.7             | 68.5 MB   | ####5      |  45% qt-5.9.7             | 68.5 MB   | ######1    |  61% qt-5.9.7             | 68.5 MB   | #######7   |  78% qt-5.9.7             | 68.5 MB   | #########3 |  94% qt-5.9.7             | 68.5 MB   | ########## | 100% 
-pyrsistent-0.15.4    | 92 KB     |            |   0% pyrsistent-0.15.4    | 92 KB     | ########## | 100% 
-freetype-2.9.1       | 550 KB    |            |   0% freetype-2.9.1       | 550 KB    | ########## | 100% 
-pluggy-0.13.0        | 31 KB     |            |   0% pluggy-0.13.0        | 31 KB     | ########## | 100% 
-krb5-1.16.1          | 1.2 MB    |            |   0% krb5-1.16.1          | 1.2 MB    | ########## | 100% 
-hdf5-1.10.4          | 3.9 MB    |            |   0% hdf5-1.10.4          | 3.9 MB    | ########## | 100% 
-mkl_fft-1.0.14       | 155 KB    |            |   0% mkl_fft-1.0.14       | 155 KB    | ########## | 100% 
-pysocks-1.7.1        | 30 KB     |            |   0% pysocks-1.7.1        | 30 KB     | ########## | 100% 
-jinja2-2.10.3        | 95 KB     |            |   0% jinja2-2.10.3        | 95 KB     | ########## | 100% 
-prometheus_client-0. | 42 KB     |            |   0% prometheus_client-0. | 42 KB     | ########## | 100% 
-python-dateutil-2.8. | 266 KB    |            |   0% python-dateutil-2.8. | 266 KB    | ########## | 100% 
-webencodings-0.5.1   | 19 KB     |            |   0% webencodings-0.5.1   | 19 KB     | ########## | 100% 
-cycler-0.10.0        | 13 KB     |            |   0% cycler-0.10.0        | 13 KB     | ########## | 100% 
-pyqt-5.9.2           | 4.5 MB    |            |   0% pyqt-5.9.2           | 4.5 MB    | ########## | 100% 
-pytest-astropy-0.5.0 | 7 KB      |            |   0% pytest-astropy-0.5.0 | 7 KB      | ########## | 100% 
-icu-58.2             | 10.3 MB   |            |   0% icu-58.2             | 10.3 MB   | ######     |  61% icu-58.2             | 10.3 MB   | ########## | 100% 
-libxcb-1.13          | 421 KB    |            |   0% libxcb-1.13          | 421 KB    | ########## | 100% 
-gst-plugins-base-1.1 | 4.8 MB    |            |   0% gst-plugins-base-1.1 | 4.8 MB    | ########## | 100% 
-pyzmq-18.1.0         | 455 KB    |            |   0% pyzmq-18.1.0         | 455 KB    | ########## | 100% 
+parso-0.5.1          | 68 KB     |            |   0% parso-0.5.1          | 68 KB     | ########## | 100% 
 backcall-0.1.0       | 20 KB     |            |   0% backcall-0.1.0       | 20 KB     | ########## | 100% 
-pandocfilters-1.4.2  | 13 KB     |            |   0% pandocfilters-1.4.2  | 13 KB     | ########## | 100% 
-prompt_toolkit-2.0.1 | 227 KB    |            |   0% prompt_toolkit-2.0.1 | 227 KB    | ########## | 100% 
-astropy-3.2.2        | 7.1 MB    |            |   0% astropy-3.2.2        | 7.1 MB    | ######3    |  64% astropy-3.2.2        | 7.1 MB    | ########## | 100% 
-proj4-5.2.0          | 6.6 MB    |            |   0% proj4-5.2.0          | 6.6 MB    | ########## | 100% 
-cloudpickle-1.2.2    | 29 KB     |            |   0% cloudpickle-1.2.2    | 29 KB     | ########## | 100% 
-kiwisolver-1.1.0     | 82 KB     |            |   0% kiwisolver-1.1.0     | 82 KB     | ########## | 100% 
-networkx-2.3         | 1.1 MB    |            |   0% networkx-2.3         | 1.1 MB    | ########## | 100% 
-qtconsole-4.5.5      | 94 KB     |            |   0% qtconsole-4.5.5      | 94 KB     | ########## | 100% 
-expat-2.2.6          | 146 KB    |            |   0% expat-2.2.6          | 146 KB    | ########## | 100% 
-pytest-arraydiff-0.3 | 15 KB     |            |   0% pytest-arraydiff-0.3 | 15 KB     | ########## | 100% 
+mkl-2019.4           | 131.2 MB  |            |   0% mkl-2019.4           | 131.2 MB  | 7          |   7% mkl-2019.4           | 131.2 MB  | #4         |  15% mkl-2019.4           | 131.2 MB  | ##2        |  23% mkl-2019.4           | 131.2 MB  | ###        |  31% mkl-2019.4           | 131.2 MB  | ###8       |  39% mkl-2019.4           | 131.2 MB  | ####6      |  47% mkl-2019.4           | 131.2 MB  | #####4     |  55% mkl-2019.4           | 131.2 MB  | ######2    |  63% mkl-2019.4           | 131.2 MB  | #######    |  71% mkl-2019.4           | 131.2 MB  | #######9   |  79% mkl-2019.4           | 131.2 MB  | ########7  |  87% mkl-2019.4           | 131.2 MB  | #########5 |  95% mkl-2019.4           | 131.2 MB  | ########## | 100% 
 xerces-c-3.2.2       | 2.3 MB    |            |   0% xerces-c-3.2.2       | 2.3 MB    | ########## | 100% 
-pytz-2019.3          | 231 KB    |            |   0% pytz-2019.3          | 231 KB    | ########## | 100% 
+gst-plugins-base-1.1 | 4.8 MB    |            |   0% gst-plugins-base-1.1 | 4.8 MB    | ########## | 100% 
+pyqt-5.9.2           | 4.5 MB    |            |   0% pyqt-5.9.2           | 4.5 MB    | ########## | 100% 
+bleach-3.1.0         | 220 KB    |            |   0% bleach-3.1.0         | 220 KB    | ########## | 100% 
+pandocfilters-1.4.2  | 13 KB     |            |   0% pandocfilters-1.4.2  | 13 KB     | ########## | 100% 
+intel-openmp-2019.4  | 729 KB    |            |   0% intel-openmp-2019.4  | 729 KB    | ########## | 100% 
+ipython_genutils-0.2 | 39 KB     |            |   0% ipython_genutils-0.2 | 39 KB     | ########## | 100% 
+attrs-19.3.0         | 39 KB     |            |   0% attrs-19.3.0         | 39 KB     | ########## | 100% 
+mkl_fft-1.0.14       | 155 KB    |            |   0% mkl_fft-1.0.14       | 155 KB    | ########## | 100% 
+ca-certificates-2019 | 131 KB    |            |   0% ca-certificates-2019 | 131 KB    | ########## | 100% 
+kiwisolver-1.1.0     | 82 KB     |            |   0% kiwisolver-1.1.0     | 82 KB     | ########## | 100% 
+mkl-service-2.3.0    | 218 KB    |            |   0% mkl-service-2.3.0    | 218 KB    | ########## | 100% 
+pixman-0.38.0        | 364 KB    |            |   0% pixman-0.38.0        | 364 KB    | ########## | 100% 
+poppler-data-0.4.9   | 1.9 MB    |            |   0% poppler-data-0.4.9   | 1.9 MB    | ########## | 100% 
+krb5-1.16.1          | 1.2 MB    |            |   0% krb5-1.16.1          | 1.2 MB    | ########## | 100% 
+wcwidth-0.1.7        | 22 KB     |            |   0% wcwidth-0.1.7        | 22 KB     | ########## | 100% 
 libcurl-7.65.3       | 431 KB    |            |   0% libcurl-7.65.3       | 431 KB    | ########## | 100% 
+libkml-1.3.0         | 564 KB    |            |   0% libkml-1.3.0         | 564 KB    | ########## | 100% 
+jupyter_core-4.6.0   | 74 KB     |            |   0% jupyter_core-4.6.0   | 74 KB     | ########## | 100% 
+jedi-0.15.1          | 704 KB    |            |   0% jedi-0.15.1          | 704 KB    | ########## | 100% 
 nbformat-4.4.0       | 128 KB    |            |   0% nbformat-4.4.0       | 128 KB    | ########## | 100% 
-pytest-doctestplus-0 | 18 KB     |            |   0% pytest-doctestplus-0 | 18 KB     | ########## | 100% 
-libspatialite-4.3.0a | 2.1 MB    |            |   0% libspatialite-4.3.0a | 2.1 MB    | ########## | 100% 
-traitlets-4.3.3      | 138 KB    |            |   0% traitlets-4.3.3      | 138 KB    | ########## | 100% 
-freexl-1.0.5         | 40 KB     |            |   0% freexl-1.0.5         | 40 KB     | ########## | 100% 
-more-itertools-7.2.0 | 100 KB    |            |   0% more-itertools-7.2.0 | 100 KB    | ########## | 100% 
-entrypoints-0.3      | 12 KB     |            |   0% entrypoints-0.3      | 12 KB     | ########## | 100% 
-importlib_metadata-0 | 43 KB     |            |   0% importlib_metadata-0 | 43 KB     | ########## | 100% 
+pcre-8.43            | 209 KB    |            |   0% pcre-8.43            | 209 KB    | ########## | 100% 
+jinja2-2.10.3        | 95 KB     |            |   0% jinja2-2.10.3        | 95 KB     | ########## | 100% 
+h5py-2.9.0           | 991 KB    |            |   0% h5py-2.9.0           | 991 KB    | ########## | 100% 
+scipy-1.3.1          | 14.0 MB   |            |   0% scipy-1.3.1          | 14.0 MB   | ######5    |  65% scipy-1.3.1          | 14.0 MB   | ########## | 100% 
+chardet-3.0.4        | 174 KB    |            |   0% chardet-3.0.4        | 174 KB    | ########## | 100% 
+pytest-remotedata-0. | 15 KB     |            |   0% pytest-remotedata-0. | 15 KB     | ########## | 100% 
+json-c-0.13.1        | 64 KB     |            |   0% json-c-0.13.1        | 64 KB     | ########## | 100% 
+olefile-0.46         | 50 KB     |            |   0% olefile-0.46         | 50 KB     | ########## | 100% 
+libsodium-1.0.16     | 214 KB    |            |   0% libsodium-1.0.16     | 214 KB    | ########## | 100% 
+jpeg-9b              | 214 KB    |            |   0% jpeg-9b              | 214 KB    | ########## | 100% 
+pyparsing-2.4.2      | 61 KB     |            |   0% pyparsing-2.4.2      | 61 KB     | ########## | 100% 
+py-1.8.0             | 148 KB    |            |   0% py-1.8.0             | 148 KB    | ########## | 100% 
 Preparing transaction: ...working... done
 Verifying transaction: ...working... done
 Executing transaction: ...working... done
@@ -669,32 +651,27 @@ Please update conda by running
     $ conda update -n base -c defaults conda
 
 
-[0m ---> 708e7800bb90
-Removing intermediate container 524f35b26ae1
-Step 12/17 : RUN rm ~/tool/plant.install.sh
- ---> Running in b0c726f02076
+[0m ---> 0149848c81f9
+Removing intermediate container 6d15facb1eeb
+Step 8/13 : RUN mkdir -p ~/verdi/ops/s1-gcov-plant
+ ---> Running in b7504a908baf
 
-[91m[0m ---> 191f115b5959
-Removing intermediate container b0c726f02076
-Step 13/17 : RUN ls ~/tool
- ---> Running in ce9e159f22a6
-
-[91m[0mminiconda3
- ---> 654c6dda63a6
-Removing intermediate container ce9e159f22a6
-Step 14/17 : RUN mkdir -p ~/verdi/ops/s1-gcov-plant
- ---> Running in 4649e8d840f7
-
-[91m[0m ---> 369eca994b94
-Removing intermediate container 4649e8d840f7
-Step 15/17 : COPY ./covmat.py /home/ops/verdi/ops/s1-gcov-plant
- ---> 317bd625814f
-Removing intermediate container 92fb588a8d34
-Step 16/17 : COPY ./run.sh /home/ops/verdi/ops/s1-gcov-plant
- ---> 32f141361e5b
-Removing intermediate container 8005232c6491
-Step 17/17 : CMD /bin/bash --login
- ---> Running in 9a1bfda0c51c
- ---> c840f092b9ea
-Removing intermediate container 9a1bfda0c51c
-Successfully built c840f092b9ea
+[91m[0m ---> 9d85e4b07d1a
+Removing intermediate container b7504a908baf
+Step 9/13 : COPY ./covmat.py /home/ops/verdi/ops/s1-gcov-plant
+ ---> 124a20e808ba
+Removing intermediate container 89850f10ebd4
+Step 10/13 : COPY ./util.py /home/ops/verdi/ops/s1-gcov-plant
+ ---> 5762747b3760
+Removing intermediate container 95b250b2136e
+Step 11/13 : COPY ./run.sh /home/ops/verdi/ops/s1-gcov-plant
+ ---> 3938c50507fe
+Removing intermediate container d612a69c0bcb
+Step 12/13 : WORKDIR /home/ops
+ ---> 8b3c418ac31e
+Removing intermediate container caf7487d4cf8
+Step 13/13 : CMD /bin/bash --login
+ ---> Running in 50cb254c8370
+ ---> f2f693e55184
+Removing intermediate container 50cb254c8370
+Successfully built f2f693e55184
