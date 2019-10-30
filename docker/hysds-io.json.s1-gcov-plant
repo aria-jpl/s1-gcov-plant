@@ -39,7 +39,7 @@
       "name":"localize_products",
       "from":"dataset_jpath:",
       "type":"text",
-      "lambda" : "lambda ds: list(filter(lambda x: x.startswith('s3://'), ds['urls']))[0]"
+      "lambda" : "lambda ds: filter(lambda x: x.startswith('s3://'), ds['_source']['urls'])[0]"
     }
   ]
 }
