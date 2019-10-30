@@ -37,7 +37,9 @@
     },
     {
       "name":"localize_products",
-      "from": "dataset_jpath:_source.metadata.localize_urls"
+      "from":"dataset_jpath:",
+      "type":"text",
+      "lambda" : "lambda ds: filter(lambda x: x.startswith('s3://'), ds['urls'])[0]"
     }
   ]
 }
