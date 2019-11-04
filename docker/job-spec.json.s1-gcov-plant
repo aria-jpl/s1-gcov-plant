@@ -7,7 +7,7 @@
   },
   "soft_time_limit": 600,
   "time_limit": 600,
-  "disk_usage": "4GB",
+  "disk_usage": "1000GB",
   "params": [
     {
       "name": "min_lat",
