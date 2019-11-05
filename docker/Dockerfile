@@ -4,21 +4,21 @@ LABEL maintainer="hysds"
 
 USER ops
 
-#RUN mkdir -p /home/ops/tool
-#COPY ./barn/Miniconda3-latest-Linux-x86_64.sh /home/ops/tool
-#COPY ./barn/plant.install.sh /home/ops/tool
+RUN mkdir -p /home/ops/tool
+COPY ./barn/Miniconda3-latest-Linux-x86_64.sh /home/ops/tool
+COPY ./barn/plant.install.sh /home/ops/tool
 
 #RUN ls ~/tool
 
 # install miniconda and PLAnT
 # to rid of some warnings from install line below
-#RUN mkdir -p ~/.conda && \
-#    # ref: https://docs.anaconda.com/anaconda/install/silent-mode/
-#    sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3 && \
-#    rm ~/tool/Miniconda3-latest-Linux-x86_64.sh && \
-#    # install PLAnT
-#    sh ~/tool/plant.install.sh . && \
-#    rm ~/tool/plant.install.sh
+RUN mkdir -p ~/.conda && \
+    # ref: https://docs.anaconda.com/anaconda/install/silent-mode/
+    sh ~/tool/Miniconda3-latest-Linux-x86_64.sh -b -p ~/tool/miniconda3 && \
+    rm ~/tool/Miniconda3-latest-Linux-x86_64.sh && \
+    # install PLAnT
+    sh ~/tool/plant.install.sh . && \
+    rm ~/tool/plant.install.sh
 
 #RUN ls ~/tool
 
