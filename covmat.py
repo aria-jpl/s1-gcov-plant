@@ -11,7 +11,8 @@ import sys
 
 from util import get_input_dir_path, get_output_dir_path
 
-workDirPath = "/home/ops"
+#workDirPath = "/home/ops"
+workDirPath = "."
 
 #inputDirPath = '/var/data/coregistered_slcs-20190506161610-20190530161638/merged/'
 inputDirPath = get_input_dir_path(workDirPath)
