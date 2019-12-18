@@ -36,6 +36,30 @@ def get_output_dir_path(workDirPath):
     outputDirPath = './s1-gcov'
     return outputDirPath
 
+
+from netCDF4 import Dataset
+
+class Netcdf4CreatorException(Exception):
+    pass
+
+class Netcdf4Creator:
+
+    def __init__(self, outputPath=None):
+        if outputPath is None:
+            raise Netcdf4CreatorException("No output path given")
+        self.rootGroup = Dataset(outputPath, "w", format="NETCDF4")
+
+    def add_2d_array(self, groupFullName, varName, varType, varShape, varValue):
+        group = self.rootGroup.createGroup(groupFullName)
+        dim0 = group.createDimension("dim0", varShape[0])
+        dim1 = group.createDimension("dim1", varShape[1])
+        var = group.createVariable(varName, varType, ("dim0", "dim1"))
+        print(var)
+        var[:] = varValue
+
+    def close(self):
+        self.rootGroup.close()
+
 def main():
 
     workDirPath = "."

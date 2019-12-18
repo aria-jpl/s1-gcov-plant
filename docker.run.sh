@@ -9,4 +9,4 @@ docker run \
     -v ~/hysds/s1-gcov/work/data:/var/data \
     --rm \
     -it \
-    hysds/${name}:20191008 bash
+    hysds/${name}:20191218 bash

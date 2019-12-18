@@ -24,9 +24,10 @@ RUN mkdir -p ~/.conda && \
 
 # the tool to generate gcov product
 RUN mkdir -p ~/verdi/ops/s1-gcov-plant
-COPY ./covmat.py /home/ops/verdi/ops/s1-gcov-plant
-COPY ./util.py   /home/ops/verdi/ops/s1-gcov-plant
-COPY ./run.sh    /home/ops/verdi/ops/s1-gcov-plant
+COPY ./covmat.py     /home/ops/verdi/ops/s1-gcov-plant
+COPY ./create_nc4.py /home/ops/verdi/ops/s1-gcov-plant
+COPY ./util.py       /home/ops/verdi/ops/s1-gcov-plant
+COPY ./run.sh        /home/ops/verdi/ops/s1-gcov-plant
 
 # Change to work directory
 WORKDIR /home/ops

@@ -10,4 +10,4 @@ context=.
 docker build ${context} \
     --no-cache \
     --file ${context}/docker/Dockerfile \
-    --tag hysds/${name}:20191008
+    --tag hysds/${name}:20191218
